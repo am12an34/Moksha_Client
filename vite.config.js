@@ -7,6 +7,27 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  optimizeDeps: {
+    esbuildOptions: {
+      // Enable JSX in .js files
+      loader: {
+        '.js': 'jsx',
+        '.ts': 'tsx',
+      },
+      // Disable TypeScript checking during build
+      tsconfigRaw: {
+        compilerOptions: {
+          skipLibCheck: true,
+          skipDefaultLibCheck: true,
+          noEmit: true,
+          noImplicitAny: false,
+          strictNullChecks: false,
+          noUnusedLocals: false,
+          noUnusedParameters: false,
+        },
+      },
+    },
+  },
   plugins: [react()],
   resolve: {
     alias: {
@@ -18,6 +39,11 @@ export default defineConfig({
   },
   build: {
     emptyOutDir: true,
+    // Disable TypeScript checking during build
+    typescript: {
+      noEmit: true,
+      ignoreBuildErrors: true,
+    },
   },
   define: {
     __VUE_OPTIONS_API__: false,

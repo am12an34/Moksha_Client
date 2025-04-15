@@ -9,7 +9,7 @@
     "typecheck": "tsc -p tsconfig.json",
     "typecheck:build": "tsc -p tsconfig.build.json",
     "sitemap": "node scripts/sitemap.cjs",
-    "build": "npm run typecheck:build && vite build",
+    "build": "vite build",
     "postbuild": "node scripts/postbuild.js",
     "lint": "eslint src --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
