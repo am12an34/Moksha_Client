@@ -1,3 +1,4 @@
+
 # dependencies
 node_modules/
 
@@ -32,16 +33,3 @@ Thumbs.db
 
 # TypeScript cache
 *.tsbuildinfo
-
-# Netlify build output (optional)
-.netlify/
-
-# Custom folders
-packages/
-scripts/
-
-# Optional - if using coverage tools
-coverage/
-
-# Lighthouse CI (optional)
-lighthouseci/
